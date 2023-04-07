@@ -24,7 +24,6 @@ class ContactList extends Component {
             <svg className={css.searchBtnIcon} width="28" height="28">
               <use href={`${sprite}#search`}></use>
             </svg>
-            {/* <span className={css.searchFormButtonLabel}>Search</span> */}
           </button>
 
           <input
