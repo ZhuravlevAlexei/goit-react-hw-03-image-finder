@@ -1,17 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import css from './ImageGalleryItem.module.css';
 
-const ImageGalleryItem = ({ webformatURL, largeImageURL, tags }) => {
+const ImageGalleryItem = ({
+  key,
+  webformatURL,
+  largeImageURL,
+  tags,
+  onOpenModal,
+}) => {
   return (
-    <li classNane={css.imageGalleryItem}>
+    <li key={key} classNane={css.imageGalleryItem}>
       <img
         className={css.imageGalleryItemImage}
         src={webformatURL}
         alt={tags}
-        //onClick={ }
+        onClick={() => {
+          onOpenModal({ picUrl: largeImageURL, picTags: tags });
+        }}
       />
     </li>
   );
+};
+
+ImageGalleryItem.propTypes = {
+  key: PropTypes.string.isRequired,
+  webformatURL: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+  tags: PropTypes.string.isRequired,
+  onOpenModal: PropTypes.func.isRequired,
 };
 
 export default ImageGalleryItem;

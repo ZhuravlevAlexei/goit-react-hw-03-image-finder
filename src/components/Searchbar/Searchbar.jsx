@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './Searchbar.module.css';
 import sprite from 'search.svg';
 
@@ -40,4 +41,9 @@ class ContactList extends Component {
     );
   }
 }
+
+ContactList.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
 export default ContactList;
